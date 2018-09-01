@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC1C9AA3213ACD5C0029AD9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA2213ACD5C0029AD9C /* AppDelegate.swift */; };
+		BC1C9AA5213ACD5C0029AD9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA4213ACD5C0029AD9C /* ViewController.swift */; };
+		BC1C9AA8213ACD5C0029AD9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1C9AA6213ACD5C0029AD9C /* Main.storyboard */; };
+		BC1C9AAB213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA9213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld */; };
+		BC1C9AAD213ACD5C0029AD9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1C9AAC213ACD5C0029AD9C /* Assets.xcassets */; };
+		BC1C9AB0213ACD5C0029AD9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1C9AAE213ACD5C0029AD9C /* LaunchScreen.storyboard */; };
+		BC1C9ABB213ACD5D0029AD9C /* MazeSolverRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9ABA213ACD5D0029AD9C /* MazeSolverRendererTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC1C9AB7213ACD5D0029AD9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC1C9A97213ACD5C0029AD9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC1C9A9E213ACD5C0029AD9C;
+			remoteInfo = MazeSolverRenderer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BC1C9A9F213ACD5C0029AD9C /* MazeSolverRenderer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MazeSolverRenderer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1C9AA2213ACD5C0029AD9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BC1C9AA4213ACD5C0029AD9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC1C9AA7213ACD5C0029AD9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC1C9AAA213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MazeSolverRenderer.xcdatamodel; sourceTree = "<group>"; };
+		BC1C9AAC213ACD5C0029AD9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC1C9AAF213ACD5C0029AD9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC1C9AB1213ACD5C0029AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC1C9AB6213ACD5D0029AD9C /* MazeSolverRendererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MazeSolverRendererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1C9ABA213ACD5D0029AD9C /* MazeSolverRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeSolverRendererTests.swift; sourceTree = "<group>"; };
+		BC1C9ABC213ACD5D0029AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC1C9A9C213ACD5C0029AD9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC1C9AB3213ACD5D0029AD9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC1C9A96213ACD5C0029AD9C = {
+			isa = PBXGroup;
+			children = (
+				BC1C9AA1213ACD5C0029AD9C /* MazeSolverRenderer */,
+				BC1C9AB9213ACD5D0029AD9C /* MazeSolverRendererTests */,
+				BC1C9AA0213ACD5C0029AD9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC1C9AA0213ACD5C0029AD9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C9A9F213ACD5C0029AD9C /* MazeSolverRenderer.app */,
+				BC1C9AB6213ACD5D0029AD9C /* MazeSolverRendererTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC1C9AA1213ACD5C0029AD9C /* MazeSolverRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C9AA2213ACD5C0029AD9C /* AppDelegate.swift */,
+				BC1C9AA4213ACD5C0029AD9C /* ViewController.swift */,
+				BC1C9AA6213ACD5C0029AD9C /* Main.storyboard */,
+				BC1C9AAC213ACD5C0029AD9C /* Assets.xcassets */,
+				BC1C9AAE213ACD5C0029AD9C /* LaunchScreen.storyboard */,
+				BC1C9AB1213ACD5C0029AD9C /* Info.plist */,
+				BC1C9AA9213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld */,
+			);
+			path = MazeSolverRenderer;
+			sourceTree = "<group>";
+		};
+		BC1C9AB9213ACD5D0029AD9C /* MazeSolverRendererTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C9ABA213ACD5D0029AD9C /* MazeSolverRendererTests.swift */,
+				BC1C9ABC213ACD5D0029AD9C /* Info.plist */,
+			);
+			path = MazeSolverRendererTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC1C9A9E213ACD5C0029AD9C /* MazeSolverRenderer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC1C9ABF213ACD5D0029AD9C /* Build configuration list for PBXNativeTarget "MazeSolverRenderer" */;
+			buildPhases = (
+				BC1C9A9B213ACD5C0029AD9C /* Sources */,
+				BC1C9A9C213ACD5C0029AD9C /* Frameworks */,
+				BC1C9A9D213ACD5C0029AD9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MazeSolverRenderer;
+			productName = MazeSolverRenderer;
+			productReference = BC1C9A9F213ACD5C0029AD9C /* MazeSolverRenderer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC1C9AB5213ACD5D0029AD9C /* MazeSolverRendererTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC1C9AC2213ACD5D0029AD9C /* Build configuration list for PBXNativeTarget "MazeSolverRendererTests" */;
+			buildPhases = (
+				BC1C9AB2213ACD5D0029AD9C /* Sources */,
+				BC1C9AB3213ACD5D0029AD9C /* Frameworks */,
+				BC1C9AB4213ACD5D0029AD9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC1C9AB8213ACD5D0029AD9C /* PBXTargetDependency */,
+			);
+			name = MazeSolverRendererTests;
+			productName = MazeSolverRendererTests;
+			productReference = BC1C9AB6213ACD5D0029AD9C /* MazeSolverRendererTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC1C9A97213ACD5C0029AD9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Anteng Lin";
+				TargetAttributes = {
+					BC1C9A9E213ACD5C0029AD9C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					BC1C9AB5213ACD5D0029AD9C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = BC1C9A9E213ACD5C0029AD9C;
+					};
+				};
+			};
+			buildConfigurationList = BC1C9A9A213ACD5C0029AD9C /* Build configuration list for PBXProject "MazeSolverRenderer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC1C9A96213ACD5C0029AD9C;
+			productRefGroup = BC1C9AA0213ACD5C0029AD9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC1C9A9E213ACD5C0029AD9C /* MazeSolverRenderer */,
+				BC1C9AB5213ACD5D0029AD9C /* MazeSolverRendererTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC1C9A9D213ACD5C0029AD9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC1C9AB0213ACD5C0029AD9C /* LaunchScreen.storyboard in Resources */,
+				BC1C9AAD213ACD5C0029AD9C /* Assets.xcassets in Resources */,
+				BC1C9AA8213ACD5C0029AD9C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC1C9AB4213ACD5D0029AD9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC1C9A9B213ACD5C0029AD9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC1C9AA5213ACD5C0029AD9C /* ViewController.swift in Sources */,
+				BC1C9AAB213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld in Sources */,
+				BC1C9AA3213ACD5C0029AD9C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC1C9AB2213ACD5D0029AD9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC1C9ABB213ACD5D0029AD9C /* MazeSolverRendererTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC1C9AB8213ACD5D0029AD9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC1C9A9E213ACD5C0029AD9C /* MazeSolverRenderer */;
+			targetProxy = BC1C9AB7213ACD5D0029AD9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC1C9AA6213ACD5C0029AD9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC1C9AA7213ACD5C0029AD9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC1C9AAE213ACD5C0029AD9C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC1C9AAF213ACD5C0029AD9C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC1C9ABD213ACD5D0029AD9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC1C9ABE213ACD5D0029AD9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC1C9AC0213ACD5D0029AD9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CDFABBUJB6;
+				INFOPLIST_FILE = MazeSolverRenderer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AntengLin.MazeSolverRenderer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC1C9AC1213ACD5D0029AD9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CDFABBUJB6;
+				INFOPLIST_FILE = MazeSolverRenderer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AntengLin.MazeSolverRenderer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC1C9AC3213ACD5D0029AD9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CDFABBUJB6;
+				INFOPLIST_FILE = MazeSolverRendererTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AntengLin.MazeSolverRendererTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MazeSolverRenderer.app/MazeSolverRenderer";
+			};
+			name = Debug;
+		};
+		BC1C9AC4213ACD5D0029AD9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CDFABBUJB6;
+				INFOPLIST_FILE = MazeSolverRendererTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AntengLin.MazeSolverRendererTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MazeSolverRenderer.app/MazeSolverRenderer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC1C9A9A213ACD5C0029AD9C /* Build configuration list for PBXProject "MazeSolverRenderer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC1C9ABD213ACD5D0029AD9C /* Debug */,
+				BC1C9ABE213ACD5D0029AD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC1C9ABF213ACD5D0029AD9C /* Build configuration list for PBXNativeTarget "MazeSolverRenderer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC1C9AC0213ACD5D0029AD9C /* Debug */,
+				BC1C9AC1213ACD5D0029AD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC1C9AC2213ACD5D0029AD9C /* Build configuration list for PBXNativeTarget "MazeSolverRendererTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC1C9AC3213ACD5D0029AD9C /* Debug */,
+				BC1C9AC4213ACD5D0029AD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BC1C9AA9213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC1C9AAA213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodel */,
+			);
+			currentVersion = BC1C9AAA213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodel */;
+			path = MazeSolverRenderer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BC1C9A97213ACD5C0029AD9C /* Project object */;
+}
