@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AECD1BC33491A00F32F32D8 /* Pods_MazeSolverRendererTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D004975D3CBA6C0482C80ABA /* Pods_MazeSolverRendererTests.framework */; };
 		BC1C9AA3213ACD5C0029AD9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA2213ACD5C0029AD9C /* AppDelegate.swift */; };
-		BC1C9AA5213ACD5C0029AD9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA4213ACD5C0029AD9C /* ViewController.swift */; };
+		BC1C9AA5213ACD5C0029AD9C /* MazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA4213ACD5C0029AD9C /* MazeViewController.swift */; };
 		BC1C9AA8213ACD5C0029AD9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1C9AA6213ACD5C0029AD9C /* Main.storyboard */; };
 		BC1C9AAB213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA9213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld */; };
 		BC1C9AAD213ACD5C0029AD9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1C9AAC213ACD5C0029AD9C /* Assets.xcassets */; };
 		BC1C9AB0213ACD5C0029AD9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1C9AAE213ACD5C0029AD9C /* LaunchScreen.storyboard */; };
 		BC1C9ABB213ACD5D0029AD9C /* MazeSolverRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9ABA213ACD5D0029AD9C /* MazeSolverRendererTests.swift */; };
+		BC5393A7213ACE4A005AF5C5 /* TakeHomeTask.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5393A3213ACE4A005AF5C5 /* TakeHomeTask.xcassets */; };
+		BC5393A8213ACE4A005AF5C5 /* MazeApp-iPhone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC5393A4213ACE4A005AF5C5 /* MazeApp-iPhone.jpg */; };
+		BC5393A9213ACE4A005AF5C5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC5393A5213ACE4A005AF5C5 /* README.md */; };
+		BC5393AD213AD32C005AF5C5 /* TakeHomeTask.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC5393A6213ACE4A005AF5C5 /* TakeHomeTask.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C280480A8B624CAEF0B22AE7 /* Pods_MazeSolverRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D30FEDF0EEB9EBB647200F /* Pods_MazeSolverRenderer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,10 +32,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BC5393AE213AD32C005AF5C5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BC5393AD213AD32C005AF5C5 /* TakeHomeTask.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		07D30FEDF0EEB9EBB647200F /* Pods_MazeSolverRenderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MazeSolverRenderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09B60B9F1DC888B1C455040B /* Pods-MazeSolverRenderer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MazeSolverRenderer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MazeSolverRenderer/Pods-MazeSolverRenderer.release.xcconfig"; sourceTree = "<group>"; };
+		56822CE6BDD7F8A11238723D /* Pods-MazeSolverRendererTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MazeSolverRendererTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MazeSolverRendererTests/Pods-MazeSolverRendererTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC1C9A9F213ACD5C0029AD9C /* MazeSolverRenderer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MazeSolverRenderer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1C9AA2213ACD5C0029AD9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC1C9AA4213ACD5C0029AD9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC1C9AA4213ACD5C0029AD9C /* MazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeViewController.swift; sourceTree = "<group>"; };
 		BC1C9AA7213ACD5C0029AD9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC1C9AAA213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MazeSolverRenderer.xcdatamodel; sourceTree = "<group>"; };
 		BC1C9AAC213ACD5C0029AD9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +61,13 @@
 		BC1C9AB6213ACD5D0029AD9C /* MazeSolverRendererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MazeSolverRendererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1C9ABA213ACD5D0029AD9C /* MazeSolverRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeSolverRendererTests.swift; sourceTree = "<group>"; };
 		BC1C9ABC213ACD5D0029AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC5393A3213ACE4A005AF5C5 /* TakeHomeTask.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TakeHomeTask.xcassets; sourceTree = "<group>"; };
+		BC5393A4213ACE4A005AF5C5 /* MazeApp-iPhone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "MazeApp-iPhone.jpg"; sourceTree = "<group>"; };
+		BC5393A5213ACE4A005AF5C5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BC5393A6213ACE4A005AF5C5 /* TakeHomeTask.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TakeHomeTask.framework; sourceTree = "<group>"; };
+		D004975D3CBA6C0482C80ABA /* Pods_MazeSolverRendererTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MazeSolverRendererTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E822524C604C65058C4B7C /* Pods-MazeSolverRendererTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MazeSolverRendererTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MazeSolverRendererTests/Pods-MazeSolverRendererTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F95C9065A3F024F67270F903 /* Pods-MazeSolverRenderer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MazeSolverRenderer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MazeSolverRenderer/Pods-MazeSolverRenderer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C280480A8B624CAEF0B22AE7 /* Pods_MazeSolverRenderer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +83,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AECD1BC33491A00F32F32D8 /* Pods_MazeSolverRendererTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		603E959E73038AA04316D004 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07D30FEDF0EEB9EBB647200F /* Pods_MazeSolverRenderer.framework */,
+				D004975D3CBA6C0482C80ABA /* Pods_MazeSolverRendererTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC1C9A96213ACD5C0029AD9C = {
 			isa = PBXGroup;
 			children = (
 				BC1C9AA1213ACD5C0029AD9C /* MazeSolverRenderer */,
 				BC1C9AB9213ACD5D0029AD9C /* MazeSolverRendererTests */,
 				BC1C9AA0213ACD5C0029AD9C /* Products */,
+				D0E9722891CDF113833A9560 /* Pods */,
+				603E959E73038AA04316D004 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +122,17 @@
 		BC1C9AA1213ACD5C0029AD9C /* MazeSolverRenderer */ = {
 			isa = PBXGroup;
 			children = (
+				BC5393AB213ACF18005AF5C5 /* Views */,
 				BC1C9AA2213ACD5C0029AD9C /* AppDelegate.swift */,
-				BC1C9AA4213ACD5C0029AD9C /* ViewController.swift */,
 				BC1C9AA6213ACD5C0029AD9C /* Main.storyboard */,
 				BC1C9AAC213ACD5C0029AD9C /* Assets.xcassets */,
 				BC1C9AAE213ACD5C0029AD9C /* LaunchScreen.storyboard */,
 				BC1C9AB1213ACD5C0029AD9C /* Info.plist */,
 				BC1C9AA9213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld */,
+				BC5393A4213ACE4A005AF5C5 /* MazeApp-iPhone.jpg */,
+				BC5393A5213ACE4A005AF5C5 /* README.md */,
+				BC5393A6213ACE4A005AF5C5 /* TakeHomeTask.framework */,
+				BC5393A3213ACE4A005AF5C5 /* TakeHomeTask.xcassets */,
 			);
 			path = MazeSolverRenderer;
 			sourceTree = "<group>";
@@ -99,6 +146,25 @@
 			path = MazeSolverRendererTests;
 			sourceTree = "<group>";
 		};
+		BC5393AB213ACF18005AF5C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C9AA4213ACD5C0029AD9C /* MazeViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0E9722891CDF113833A9560 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F95C9065A3F024F67270F903 /* Pods-MazeSolverRenderer.debug.xcconfig */,
+				09B60B9F1DC888B1C455040B /* Pods-MazeSolverRenderer.release.xcconfig */,
+				E2E822524C604C65058C4B7C /* Pods-MazeSolverRendererTests.debug.xcconfig */,
+				56822CE6BDD7F8A11238723D /* Pods-MazeSolverRendererTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +172,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC1C9ABF213ACD5D0029AD9C /* Build configuration list for PBXNativeTarget "MazeSolverRenderer" */;
 			buildPhases = (
+				F5E2CF360FBCC6F980E81CF3 /* [CP] Check Pods Manifest.lock */,
 				BC1C9A9B213ACD5C0029AD9C /* Sources */,
 				BC1C9A9C213ACD5C0029AD9C /* Frameworks */,
 				BC1C9A9D213ACD5C0029AD9C /* Resources */,
+				899089D14305D2BF407A8707 /* [CP] Embed Pods Frameworks */,
+				F991968B08578AF6A68C404D /* [CP] Copy Pods Resources */,
+				BC5393AE213AD32C005AF5C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC1C9AC2213ACD5D0029AD9C /* Build configuration list for PBXNativeTarget "MazeSolverRendererTests" */;
 			buildPhases = (
+				D9DC1BFA787BD30A392F2A9E /* [CP] Check Pods Manifest.lock */,
 				BC1C9AB2213ACD5D0029AD9C /* Sources */,
 				BC1C9AB3213ACD5D0029AD9C /* Frameworks */,
 				BC1C9AB4213ACD5D0029AD9C /* Resources */,
+				9C7AD7EC6B6D7195037946FB /* [CP] Embed Pods Frameworks */,
+				6EE2DF7EA27711286B450CB5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,8 +253,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC5393A9213ACE4A005AF5C5 /* README.md in Resources */,
 				BC1C9AB0213ACD5C0029AD9C /* LaunchScreen.storyboard in Resources */,
 				BC1C9AAD213ACD5C0029AD9C /* Assets.xcassets in Resources */,
+				BC5393A7213ACE4A005AF5C5 /* TakeHomeTask.xcassets in Resources */,
+				BC5393A8213ACE4A005AF5C5 /* MazeApp-iPhone.jpg in Resources */,
 				BC1C9AA8213ACD5C0029AD9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,12 +271,111 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6EE2DF7EA27711286B450CB5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MazeSolverRendererTests/Pods-MazeSolverRendererTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		899089D14305D2BF407A8707 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MazeSolverRenderer/Pods-MazeSolverRenderer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C7AD7EC6B6D7195037946FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MazeSolverRendererTests/Pods-MazeSolverRendererTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9DC1BFA787BD30A392F2A9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MazeSolverRendererTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5E2CF360FBCC6F980E81CF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MazeSolverRenderer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F991968B08578AF6A68C404D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MazeSolverRenderer/Pods-MazeSolverRenderer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC1C9A9B213ACD5C0029AD9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC1C9AA5213ACD5C0029AD9C /* ViewController.swift in Sources */,
+				BC1C9AA5213ACD5C0029AD9C /* MazeViewController.swift in Sources */,
 				BC1C9AAB213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld in Sources */,
 				BC1C9AA3213ACD5C0029AD9C /* AppDelegate.swift in Sources */,
 			);
@@ -360,10 +535,15 @@
 		};
 		BC1C9AC0213ACD5D0029AD9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F95C9065A3F024F67270F903 /* Pods-MazeSolverRenderer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CDFABBUJB6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MazeSolverRenderer",
+				);
 				INFOPLIST_FILE = MazeSolverRenderer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,10 +558,15 @@
 		};
 		BC1C9AC1213ACD5D0029AD9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09B60B9F1DC888B1C455040B /* Pods-MazeSolverRenderer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CDFABBUJB6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MazeSolverRenderer",
+				);
 				INFOPLIST_FILE = MazeSolverRenderer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,6 +581,7 @@
 		};
 		BC1C9AC3213ACD5D0029AD9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2E822524C604C65058C4B7C /* Pods-MazeSolverRendererTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -417,6 +603,7 @@
 		};
 		BC1C9AC4213ACD5D0029AD9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56822CE6BDD7F8A11238723D /* Pods-MazeSolverRendererTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
