@@ -19,6 +19,10 @@
 		BC5393A8213ACE4A005AF5C5 /* MazeApp-iPhone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC5393A4213ACE4A005AF5C5 /* MazeApp-iPhone.jpg */; };
 		BC5393A9213ACE4A005AF5C5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC5393A5213ACE4A005AF5C5 /* README.md */; };
 		BC5393AD213AD32C005AF5C5 /* TakeHomeTask.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC5393A6213ACE4A005AF5C5 /* TakeHomeTask.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BC5393B2213C124D005AF5C5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5393B1213C124D005AF5C5 /* ImageDownloader.swift */; };
+		BC5393B4213C15E2005AF5C5 /* MazeFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5393B3213C15E2005AF5C5 /* MazeFrameViewController.swift */; };
+		BC5393B8213C1FD9005AF5C5 /* MazeFrameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5393B7213C1FD9005AF5C5 /* MazeFrameViewModel.swift */; };
+		BC5393BB213C21A6005AF5C5 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5393BA213C21A6005AF5C5 /* Room.swift */; };
 		C280480A8B624CAEF0B22AE7 /* Pods_MazeSolverRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D30FEDF0EEB9EBB647200F /* Pods_MazeSolverRenderer.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +69,10 @@
 		BC5393A4213ACE4A005AF5C5 /* MazeApp-iPhone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "MazeApp-iPhone.jpg"; sourceTree = "<group>"; };
 		BC5393A5213ACE4A005AF5C5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BC5393A6213ACE4A005AF5C5 /* TakeHomeTask.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TakeHomeTask.framework; sourceTree = "<group>"; };
+		BC5393B1213C124D005AF5C5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		BC5393B3213C15E2005AF5C5 /* MazeFrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeFrameViewController.swift; sourceTree = "<group>"; };
+		BC5393B7213C1FD9005AF5C5 /* MazeFrameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeFrameViewModel.swift; sourceTree = "<group>"; };
+		BC5393BA213C21A6005AF5C5 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		D004975D3CBA6C0482C80ABA /* Pods_MazeSolverRendererTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MazeSolverRendererTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E822524C604C65058C4B7C /* Pods-MazeSolverRendererTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MazeSolverRendererTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MazeSolverRendererTests/Pods-MazeSolverRendererTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F95C9065A3F024F67270F903 /* Pods-MazeSolverRenderer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MazeSolverRenderer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MazeSolverRenderer/Pods-MazeSolverRenderer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,7 +130,10 @@
 		BC1C9AA1213ACD5C0029AD9C /* MazeSolverRenderer */ = {
 			isa = PBXGroup;
 			children = (
+				BC5393B9213C2180005AF5C5 /* Models */,
+				BC5393B0213C1220005AF5C5 /* Domain */,
 				BC5393AB213ACF18005AF5C5 /* Views */,
+				BC5393B6213C1FC0005AF5C5 /* ViewModel */,
 				BC1C9AA2213ACD5C0029AD9C /* AppDelegate.swift */,
 				BC1C9AA6213ACD5C0029AD9C /* Main.storyboard */,
 				BC1C9AAC213ACD5C0029AD9C /* Assets.xcassets */,
@@ -150,8 +161,33 @@
 			isa = PBXGroup;
 			children = (
 				BC1C9AA4213ACD5C0029AD9C /* MazeViewController.swift */,
+				BC5393B3213C15E2005AF5C5 /* MazeFrameViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BC5393B0213C1220005AF5C5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BC5393B1213C124D005AF5C5 /* ImageDownloader.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BC5393B6213C1FC0005AF5C5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC5393B7213C1FD9005AF5C5 /* MazeFrameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BC5393B9213C2180005AF5C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC5393BA213C21A6005AF5C5 /* Room.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D0E9722891CDF113833A9560 /* Pods */ = {
@@ -293,9 +329,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MazeSolverRenderer/Pods-MazeSolverRenderer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -376,7 +415,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC1C9AA5213ACD5C0029AD9C /* MazeViewController.swift in Sources */,
+				BC5393B8213C1FD9005AF5C5 /* MazeFrameViewModel.swift in Sources */,
+				BC5393BB213C21A6005AF5C5 /* Room.swift in Sources */,
 				BC1C9AAB213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld in Sources */,
+				BC5393B2213C124D005AF5C5 /* ImageDownloader.swift in Sources */,
+				BC5393B4213C15E2005AF5C5 /* MazeFrameViewController.swift in Sources */,
 				BC1C9AA3213ACD5C0029AD9C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

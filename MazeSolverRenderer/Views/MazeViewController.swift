@@ -9,8 +9,18 @@
 import UIKit
 
 class MazeViewController: UIViewController {
+    @IBOutlet private weak var mazeFrameContainerView: UIView!
+
+    private lazy var mazeFrameViewController: MazeFrameViewController = {
+        return MazeFrameViewController()
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        addChildViewController(mazeFrameViewController)
+        mazeFrameContainerView.addSubview(mazeFrameViewController.view)
+        mazeFrameViewController.didMove(toParentViewController: self)
     }
 }
 

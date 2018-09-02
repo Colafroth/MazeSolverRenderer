@@ -27,9 +27,18 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yds-vE-nR0">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Border" translatesAutoresizingMaskIntoConstraints="NO" id="akJ-Th-2WG">
+                                                <rect key="frame" x="10" y="10" width="355" height="355"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="akJ-Th-2WG" firstAttribute="top" secondItem="Yds-vE-nR0" secondAttribute="top" constant="10" id="URF-so-9Tf"/>
                                             <constraint firstAttribute="width" secondItem="Yds-vE-nR0" secondAttribute="height" multiplier="1:1" id="Y0g-5Z-zxA"/>
+                                            <constraint firstItem="akJ-Th-2WG" firstAttribute="leading" secondItem="Yds-vE-nR0" secondAttribute="leading" constant="10" id="ZK3-5n-lkK"/>
+                                            <constraint firstAttribute="trailing" secondItem="akJ-Th-2WG" secondAttribute="trailing" constant="10" id="tzp-vY-q9y"/>
+                                            <constraint firstAttribute="bottom" secondItem="akJ-Th-2WG" secondAttribute="bottom" constant="10" id="voO-kE-xRf"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-Sl-0cz">
@@ -95,6 +104,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mazeFrameContainerView" destination="Yds-vE-nR0" id="EnF-qb-8GD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,6 +114,7 @@
     </scenes>
     <resources>
         <image name="Background" width="70" height="70"/>
+        <image name="Border" width="30" height="30"/>
         <image name="Button" width="120" height="120"/>
     </resources>
 </document>

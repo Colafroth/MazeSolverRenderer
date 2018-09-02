@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CAB181547C9B72EEB45B47D0E37DD275"
+               BlueprintIdentifier = "EE0AB8A7EC5085D7C4AF3F45B5C5BBE2"
                BuildableName = "Pods_MazeSolverRenderer.framework"
                BlueprintName = "Pods-MazeSolverRenderer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CAB181547C9B72EEB45B47D0E37DD275"
+            BlueprintIdentifier = "EE0AB8A7EC5085D7C4AF3F45B5C5BBE2"
             BuildableName = "Pods_MazeSolverRenderer.framework"
             BlueprintName = "Pods-MazeSolverRenderer"
             ReferencedContainer = "container:Pods.xcodeproj">
