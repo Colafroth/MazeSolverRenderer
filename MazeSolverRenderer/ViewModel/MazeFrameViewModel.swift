@@ -20,6 +20,14 @@ struct MazeFrameViewModel {
             }
 
             guard let data = data else { return }
+
+            var room: Room
+            do {
+                room = try JSONDecoder().decode(Room.self, from: data)
+                print(room)
+            } catch {
+                print(error)
+            }
         }
     }
 }

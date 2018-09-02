@@ -10,12 +10,16 @@ import UIKit
 
 class MazeFrameViewController: UIViewController {
 
+    var viewModel = MazeFrameViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .blue
 
         view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+
+        viewModel.fetchFirstTile()
     }
 
     override func viewDidLayoutSubviews() {
