@@ -7,11 +7,35 @@
 //
 
 import Foundation
+import UIKit
 
 struct MazeInfo {
-    var maxWidth = 0
+    private var smallestX = 0
+    private var largestX = 0
+    private var smallestY = 0
+    private var largestY = 0
+    private var tileSize: CGFloat = 0
+
+    var tilesOnWidth: Int {
+        return largestX - smallestX
+    }
+
+    var tilesOnHeight: Int {
+        return largestY - smallestY
+    }
+
     var maxHeight = 0
-    var tileSize = 0
+
+    func isRenderRequired(for tile: Tile) -> Bool {
+        if tile.location.x > largestX ||
+            tile.location.x < smallestX ||
+            tile.location.y > largestY ||
+            tile.location.y > smallestY {
+            return true
+        }
+
+        return false
+    }
 }
 
 protocol MazeProcessorDelegate: class {
@@ -19,12 +43,13 @@ protocol MazeProcessorDelegate: class {
 }
 
 class MazeProcessor {
+    var info = MazeInfo()
+
     private var stack = ThreadSafeStack<Tile>()
     private var array = ThreadSafeArray<Tile>()
 
     private var queue = DispatchQueue(label: "com.mazeprocessor.tony", attributes: .concurrent)
     private let manager = MazeNetworkManager()
-    private var info = MazeInfo()
     private var imageDownloader = ImageDownloader()
 
     weak var delegate: MazeProcessorDelegate?

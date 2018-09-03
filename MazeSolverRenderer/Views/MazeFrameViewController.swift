@@ -9,16 +9,29 @@
 import UIKit
 
 class MazeFrameViewController: UIViewController {
-
-    var viewModel = MazeFrameViewModel()
+    private lazy var viewModel: MazeFrameViewModel = {
+        var vm = MazeFrameViewModel()
+        vm.delegate = self
+        return vm
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .blue
 
-        view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        viewModel.start()
+    }
+}
 
-//        viewModel.fetchFirstTile()
+private extension MazeFrameViewController {
+    func render(with tile: Tile) {
+        
+    }
+}
+
+extension MazeFrameViewController: MazeFrameViewModelDelegate {
+    func didSetTile(_ tile: Tile) {
+        render(with: tile)
     }
 }
