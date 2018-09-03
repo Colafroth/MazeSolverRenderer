@@ -50,8 +50,8 @@ class Tile {
 }
 
 extension Tile {
-    static func newTile(from room: DirectionRoom?, direction: Direction, location: Location) -> Tile {
-        guard let room = room else { fatalError() }
+    static func newTile(from room: DirectionRoom?, direction: Direction, location: Location) -> Tile? {
+        guard let room = room else { return nil }
 
         let vector: Location
         switch direction {

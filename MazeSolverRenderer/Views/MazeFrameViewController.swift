@@ -9,6 +9,8 @@
 import UIKit
 
 class MazeFrameViewController: UIViewController {
+    private var tileViews = [TileView]()
+
     private lazy var viewModel: MazeFrameViewModel = {
         var vm = MazeFrameViewModel()
         vm.delegate = self
@@ -26,12 +28,23 @@ class MazeFrameViewController: UIViewController {
 
 private extension MazeFrameViewController {
     func render(with tile: Tile) {
-        
+        let tileView = TileView(tile: tile)
+        tileViews.append(tileView)
+
+        renderWhole()
+    }
+
+    func renderWhole() {
+        tileViews.forEach {
+            $0.frame = viewModel.frame(for: $0.tile.location)
+        }
     }
 }
 
 extension MazeFrameViewController: MazeFrameViewModelDelegate {
     func didSetTile(_ tile: Tile) {
-        render(with: tile)
+        DispatchQueue.main.async {
+            self.render(with: tile)
+        }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MazeFrameViewModelDelegate: class {
     func didSetTile(_ tile: Tile)
@@ -14,7 +15,10 @@ protocol MazeFrameViewModelDelegate: class {
 
 class MazeFrameViewModel {
     weak var delegate: MazeFrameViewModelDelegate?
-    
+
+    var tiles: ThreadSafeArray<Tile> {
+        return processor.array
+    }
 
     private lazy var processor: MazeProcessor = {
         let p = MazeProcessor()
@@ -24,6 +28,10 @@ class MazeFrameViewModel {
 
     func start() {
         processor.start()
+    }
+
+    func frame(for location: Location) -> CGRect {
+        return processor.frame(for: location)
     }
 }
 

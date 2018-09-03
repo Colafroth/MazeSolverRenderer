@@ -9,19 +9,28 @@
 import Foundation
 import UIKit
 
-struct MazeInfo {
+class MazeInfo {
     private var smallestX = 0
     private var largestX = 0
     private var smallestY = 0
     private var largestY = 0
-    private var tileSize: CGFloat = 0
+
+    var tileSize: CGFloat {
+        return UIScreen.main.bounds.size.width / CGFloat(length)
+    }
+
+    var length: Int {
+        return tilesOnWidth > tilesOnHeight ? tilesOnWidth : tilesOnHeight
+    }
 
     var tilesOnWidth: Int {
-        return largestX - smallestX
+        let result = largestX - smallestX
+        return result != 0 ? result : 1
     }
 
     var tilesOnHeight: Int {
-        return largestY - smallestY
+        let result = largestY - smallestY
+        return result != 0 ? result : 1
     }
 
     var maxHeight = 0
@@ -36,6 +45,28 @@ struct MazeInfo {
 
         return false
     }
+
+    func updateInfo(with tile: Tile) {
+        if tile.location.x > largestX {
+            largestX = tile.location.x
+        } else if tile.location.x < smallestX {
+            smallestX = tile.location.x
+        }
+
+        if tile.location.y > largestY {
+            largestY = tile.location.y
+        } else if tile.location.y > smallestY {
+            smallestY = tile.location.y
+        }
+    }
+
+    func x(of location: Location) -> CGFloat {
+        return CGFloat(location.x - smallestX) * tileSize
+    }
+
+    func y(of location: Location) -> CGFloat {
+        return CGFloat(location.y - smallestY) * tileSize
+    }
 }
 
 protocol MazeProcessorDelegate: class {
@@ -44,9 +75,9 @@ protocol MazeProcessorDelegate: class {
 
 class MazeProcessor {
     var info = MazeInfo()
+    var array = ThreadSafeArray<Tile>()
 
     private var stack = ThreadSafeStack<Tile>()
-    private var array = ThreadSafeArray<Tile>()
 
     private var queue = DispatchQueue(label: "com.mazeprocessor.tony", attributes: .concurrent)
     private let manager = MazeNetworkManager()
@@ -67,6 +98,13 @@ class MazeProcessor {
                 self.start()
             }
         }
+    }
+
+    func frame(for location: Location) -> CGRect {
+        return CGRect(x: info.x(of: location),
+                      y: info.y(of: location),
+                      width: info.tileSize,
+                      height: info.tileSize)
     }
 }
 
@@ -109,7 +147,7 @@ private extension MazeProcessor {
             let tiles = [Tile.newTile(from: rooms.north, direction: .north, location: tile.location),
                          Tile.newTile(from: rooms.west, direction: .west, location: tile.location),
                          Tile.newTile(from: rooms.south, direction: .south, location: tile.location),
-                         Tile.newTile(from: rooms.east, direction: .east, location: tile.location)]
+                         Tile.newTile(from: rooms.east, direction: .east, location: tile.location)].compactMap{ $0 }
 
             tiles.forEach {
                 self.addToArray($0)
@@ -138,6 +176,7 @@ private extension MazeProcessor {
             switch result {
             case .success(let image):
                 tile.image = image
+                self.info.updateInfo(with: tile)
                 self.delegate?.didSetTile(tile)
                 completionHandler()
             case .failure:
