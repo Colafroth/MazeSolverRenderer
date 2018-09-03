@@ -20,10 +20,7 @@ enum ImageDownloadError: Error {
 }
 
 class ImageDownloader {
-    static let shared = ImageDownloader()
-    private init() {}
-
-    private var queue = DispatchQueue(label: "com.maze.tony", attributes: .concurrent)
+    private var queue = DispatchQueue(label: "com.imagedownloader.tony", attributes: .concurrent)
 
     func download(with url: URL, completionHandler: @escaping (Result<UIImage>) -> ()) {
         queue.async {
@@ -38,9 +35,7 @@ class ImageDownloader {
                 completionHandler(Result.success(image))
             } catch {
                 print("Image downloader error: \(error)")
-                DispatchQueue.main.async {
-                    completionHandler(Result.failure(ImageDownloadError.nilImage))
-                }
+                completionHandler(Result.failure(ImageDownloadError.nilImage))
             }
         }
     }

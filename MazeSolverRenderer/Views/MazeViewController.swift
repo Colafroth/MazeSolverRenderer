@@ -17,10 +17,16 @@ class MazeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        basicSetup()
+    }
+}
 
+private extension MazeViewController {
+    func basicSetup() {
         addChildViewController(mazeFrameViewController)
         mazeFrameContainerView.addSubview(mazeFrameViewController.view)
         mazeFrameViewController.didMove(toParentViewController: self)
+        mazeFrameViewController.view.bounds = mazeFrameContainerView.bounds
     }
 }
 

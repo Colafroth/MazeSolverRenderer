@@ -15,13 +15,13 @@ struct Room: Codable {
 }
 
 struct Rooms: Codable {
-    var north: Direction?
-    var west: Direction?
-    var south: Direction?
-    var east: Direction?
+    var north: DirectionRoom?
+    var west: DirectionRoom?
+    var south: DirectionRoom?
+    var east: DirectionRoom?
 }
 
-struct Direction: Codable {
+struct DirectionRoom: Codable {
     var room: String?
     var lock: String?
 }

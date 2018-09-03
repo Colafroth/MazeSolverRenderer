@@ -15,6 +15,11 @@
 		BC1C9AAD213ACD5C0029AD9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1C9AAC213ACD5C0029AD9C /* Assets.xcassets */; };
 		BC1C9AB0213ACD5C0029AD9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1C9AAE213ACD5C0029AD9C /* LaunchScreen.storyboard */; };
 		BC1C9ABB213ACD5D0029AD9C /* MazeSolverRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9ABA213ACD5D0029AD9C /* MazeSolverRendererTests.swift */; };
+		BC482E8B213CC26B0032D4AF /* MazeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC482E8A213CC26B0032D4AF /* MazeNetworkManager.swift */; };
+		BC482E8E213CC7A60032D4AF /* ThreadSafeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC482E8D213CC7A60032D4AF /* ThreadSafeStack.swift */; };
+		BC482E90213CCF1C0032D4AF /* ThreadSafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC482E8F213CCF1C0032D4AF /* ThreadSafeArray.swift */; };
+		BC482E92213CDB440032D4AF /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC482E91213CDB440032D4AF /* Tile.swift */; };
+		BC482E94213CDBB80032D4AF /* MazeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC482E93213CDBB80032D4AF /* MazeProcessor.swift */; };
 		BC5393A7213ACE4A005AF5C5 /* TakeHomeTask.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5393A3213ACE4A005AF5C5 /* TakeHomeTask.xcassets */; };
 		BC5393A8213ACE4A005AF5C5 /* MazeApp-iPhone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC5393A4213ACE4A005AF5C5 /* MazeApp-iPhone.jpg */; };
 		BC5393A9213ACE4A005AF5C5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC5393A5213ACE4A005AF5C5 /* README.md */; };
@@ -65,6 +70,11 @@
 		BC1C9AB6213ACD5D0029AD9C /* MazeSolverRendererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MazeSolverRendererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1C9ABA213ACD5D0029AD9C /* MazeSolverRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeSolverRendererTests.swift; sourceTree = "<group>"; };
 		BC1C9ABC213ACD5D0029AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC482E8A213CC26B0032D4AF /* MazeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeNetworkManager.swift; sourceTree = "<group>"; };
+		BC482E8D213CC7A60032D4AF /* ThreadSafeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeStack.swift; sourceTree = "<group>"; };
+		BC482E8F213CCF1C0032D4AF /* ThreadSafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeArray.swift; sourceTree = "<group>"; };
+		BC482E91213CDB440032D4AF /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		BC482E93213CDBB80032D4AF /* MazeProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeProcessor.swift; sourceTree = "<group>"; };
 		BC5393A3213ACE4A005AF5C5 /* TakeHomeTask.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TakeHomeTask.xcassets; sourceTree = "<group>"; };
 		BC5393A4213ACE4A005AF5C5 /* MazeApp-iPhone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "MazeApp-iPhone.jpg"; sourceTree = "<group>"; };
 		BC5393A5213ACE4A005AF5C5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -130,6 +140,7 @@
 		BC1C9AA1213ACD5C0029AD9C /* MazeSolverRenderer */ = {
 			isa = PBXGroup;
 			children = (
+				BC482E8C213CC78F0032D4AF /* Utilities */,
 				BC5393B9213C2180005AF5C5 /* Models */,
 				BC5393B0213C1220005AF5C5 /* Domain */,
 				BC5393AB213ACF18005AF5C5 /* Views */,
@@ -157,6 +168,15 @@
 			path = MazeSolverRendererTests;
 			sourceTree = "<group>";
 		};
+		BC482E8C213CC78F0032D4AF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BC482E8D213CC7A60032D4AF /* ThreadSafeStack.swift */,
+				BC482E8F213CCF1C0032D4AF /* ThreadSafeArray.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		BC5393AB213ACF18005AF5C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				BC5393B1213C124D005AF5C5 /* ImageDownloader.swift */,
+				BC482E8A213CC26B0032D4AF /* MazeNetworkManager.swift */,
+				BC482E93213CDBB80032D4AF /* MazeProcessor.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -186,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				BC5393BA213C21A6005AF5C5 /* Room.swift */,
+				BC482E91213CDB440032D4AF /* Tile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -418,9 +441,14 @@
 				BC5393B8213C1FD9005AF5C5 /* MazeFrameViewModel.swift in Sources */,
 				BC5393BB213C21A6005AF5C5 /* Room.swift in Sources */,
 				BC1C9AAB213ACD5C0029AD9C /* MazeSolverRenderer.xcdatamodeld in Sources */,
+				BC482E8B213CC26B0032D4AF /* MazeNetworkManager.swift in Sources */,
 				BC5393B2213C124D005AF5C5 /* ImageDownloader.swift in Sources */,
 				BC5393B4213C15E2005AF5C5 /* MazeFrameViewController.swift in Sources */,
 				BC1C9AA3213ACD5C0029AD9C /* AppDelegate.swift in Sources */,
+				BC482E90213CCF1C0032D4AF /* ThreadSafeArray.swift in Sources */,
+				BC482E92213CDB440032D4AF /* Tile.swift in Sources */,
+				BC482E94213CDBB80032D4AF /* MazeProcessor.swift in Sources */,
+				BC482E8E213CC7A60032D4AF /* ThreadSafeStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,13 +19,6 @@ class MazeFrameViewController: UIViewController {
 
         view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
 
-        viewModel.fetchFirstTile()
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        guard let superview = view.superview else { return }
-        view.center = superview.center
+//        viewModel.fetchFirstTile()
     }
 }

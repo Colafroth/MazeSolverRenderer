@@ -7,27 +7,11 @@
 //
 
 import Foundation
-import TakeHomeTask
 
-struct MazeFrameViewModel {
+class MazeFrameViewModel {
+    private var processor = MazeProcessor()
 
-
-    func fetchFirstTile() {
-        MazeManager().fetchStartRoom { (data, error) in
-            if let error = error {
-                print("error: \(error)")
-                return
-            }
-
-            guard let data = data else { return }
-
-            var room: Room
-            do {
-                room = try JSONDecoder().decode(Room.self, from: data)
-                print(room)
-            } catch {
-                print(error)
-            }
-        }
+    func start() {
+        processor.start()
     }
 }
