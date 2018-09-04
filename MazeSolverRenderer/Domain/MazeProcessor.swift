@@ -16,7 +16,7 @@ class MazeInfo {
     private var largestY = 0
 
     var tileSize: CGFloat {
-        return UIScreen.main.bounds.size.width / CGFloat(length)
+        return (UIScreen.main.bounds.size.width - CGFloat(20)) / CGFloat(length)
     }
 
     var length: Int {
@@ -24,13 +24,11 @@ class MazeInfo {
     }
 
     var tilesOnWidth: Int {
-        let result = largestX - smallestX
-        return result != 0 ? result : 1
+        return largestX - smallestX + 1
     }
 
     var tilesOnHeight: Int {
-        let result = largestY - smallestY
-        return result != 0 ? result : 1
+        return largestY - smallestY + 1
     }
 
     var maxHeight = 0
@@ -55,16 +53,18 @@ class MazeInfo {
 
         if tile.location.y > largestY {
             largestY = tile.location.y
-        } else if tile.location.y > smallestY {
+        } else if tile.location.y < smallestY {
             smallestY = tile.location.y
         }
     }
 
     func x(of location: Location) -> CGFloat {
+        print("x: \(location.x)  smallestX: \(smallestX)  tileSize:\(tileSize)")
         return CGFloat(location.x - smallestX) * tileSize
     }
 
     func y(of location: Location) -> CGFloat {
+        print("y: \(location.y)  smallestY: \(smallestY)  tileSize:\(tileSize)")
         return CGFloat(location.y - smallestY) * tileSize
     }
 }
@@ -86,16 +86,16 @@ class MazeProcessor {
     weak var delegate: MazeProcessorDelegate?
 
     func start() {
-        manager.fetchFirstTile { result in
-            switch result {
-            case .success(let room):
-                self.queue.async {
+        queue.async {
+            self.manager.fetchFirstTile { result in
+                switch result {
+                case .success(let room):
                     let tile = Tile(room: room, location: Location(x: 0, y: 0))
                     self.addToArray(tile)
                     self.fetchTileById(in: tile)
+                case .failure:
+                    self.start()
                 }
-            case .failure:
-                self.start()
             }
         }
     }
@@ -130,6 +130,7 @@ private extension MazeProcessor {
             switch result {
             case .success(let room):
                 tile.room = room
+                self.addToArray(tile)
                 self.processRoom(in: tile)
             case .failure:
                 self.fetchTileById(in: tile)
@@ -150,8 +151,13 @@ private extension MazeProcessor {
                          Tile.newTile(from: rooms.east, direction: .east, location: tile.location)].compactMap{ $0 }
 
             tiles.forEach {
-                self.addToArray($0)
+                self.addToStack($0)
+                print("????? \($0.location)")
             }
+            
+//            sleep(1)
+            
+            self.process()
         }
     }
 
@@ -191,5 +197,13 @@ private extension MazeProcessor {
         }
 
         array.append(tile)
+    }
+    
+    func addToStack(_ tile: Tile) {
+        if array.contains(where: { $0.id == tile.id }) {
+            return
+        }
+        
+        stack.push(tile)
     }
 }

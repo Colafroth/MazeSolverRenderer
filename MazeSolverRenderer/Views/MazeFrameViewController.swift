@@ -20,15 +20,15 @@ class MazeFrameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .blue
-
         viewModel.start()
     }
 }
 
 private extension MazeFrameViewController {
     func render(with tile: Tile) {
+        print("Rendering... \(tile.room)")
         let tileView = TileView(tile: tile)
+        view.addSubview(tileView)
         tileViews.append(tileView)
 
         renderWhole()
@@ -37,6 +37,7 @@ private extension MazeFrameViewController {
     func renderWhole() {
         tileViews.forEach {
             $0.frame = viewModel.frame(for: $0.tile.location)
+            print("frame: \($0.frame)")
         }
     }
 }

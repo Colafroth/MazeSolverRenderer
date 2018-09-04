@@ -26,7 +26,7 @@ private extension MazeViewController {
         addChildViewController(mazeFrameViewController)
         mazeFrameContainerView.addSubview(mazeFrameViewController.view)
         mazeFrameViewController.didMove(toParentViewController: self)
-        mazeFrameViewController.view.bounds = mazeFrameContainerView.bounds
+        mazeFrameViewController.view.frame = CGRect(x: 10, y: 10, width: mazeFrameContainerView.bounds.size.width - 20, height: mazeFrameContainerView.bounds.size.height - 20)
     }
 }
 
