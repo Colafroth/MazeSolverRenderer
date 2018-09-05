@@ -14,18 +14,34 @@ protocol MazeFrameViewModelDelegate: class {
 }
 
 class MazeFrameViewModel {
+    var viewLength: CGFloat
+    
     weak var delegate: MazeFrameViewModelDelegate?
-
+    
     var tiles: ThreadSafeArray<Tile> {
         return processor.array
     }
+    
+    private var previousDense: Int = 0
+    var shouldReRenderMaze: Bool {
+        if processor.info.dense != previousDense {
+            previousDense = processor.info.dense
+            return true
+        }
+        
+        return false
+    }
 
     private lazy var processor: MazeProcessor = {
-        let p = MazeProcessor()
+        let p = MazeProcessor(viewLength: viewLength)
         p.delegate = self
         return p
     }()
 
+    init(viewLength: CGFloat) {
+        self.viewLength = viewLength
+    }
+    
     func start() {
         processor.start()
     }

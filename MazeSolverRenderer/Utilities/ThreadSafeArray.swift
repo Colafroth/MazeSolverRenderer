@@ -19,6 +19,8 @@ class ThreadSafeArray<T> {
     }
 
     func contains(where predicate: (T) throws -> Bool) -> Bool {
-        return try! array.contains(where: predicate)
+        return queue.sync {
+            try! array.contains(where: predicate)
+        }
     }
 }

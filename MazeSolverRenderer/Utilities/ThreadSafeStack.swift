@@ -19,7 +19,7 @@ class ThreadSafeStack<T> {
     }
 
     func pop() -> T? {
-        return queue.sync {
+        return queue.sync(flags: .barrier) {
             array.popLast()
         }
     }

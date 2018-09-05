@@ -17,14 +17,12 @@ class MazeNetworkManager {
 
     func fetchFirstTile(completionHandler: @escaping (Result<Room>) -> ()) {
         manager.fetchStartRoom { (data, error) in
-            print("WTF???")
             self.processResponse(data: data, error: error, completionHandler: completionHandler)
         }
     }
 
     func fetchTile(with id: String, completionHandler: @escaping (Result<Room>) -> ()) {
         manager.fetchRoom(withIdentifier: id) { (data, error) in
-            print("id: \(id)")
             self.processResponse(data: data, error: error, completionHandler: completionHandler)
         }
     }

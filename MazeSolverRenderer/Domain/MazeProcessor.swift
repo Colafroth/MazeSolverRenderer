@@ -10,38 +10,24 @@ import Foundation
 import UIKit
 
 class MazeInfo {
+    var viewLength: CGFloat
+    
     private var smallestX = 0
     private var largestX = 0
     private var smallestY = 0
     private var largestY = 0
+    private var maxHeight = 0
 
     var tileSize: CGFloat {
-        return (UIScreen.main.bounds.size.width - CGFloat(20)) / CGFloat(length)
+        return viewLength / CGFloat(length)
+    }
+    
+    var dense: Int {
+        return tilesOnWidth * tilesOnHeight
     }
 
-    var length: Int {
-        return tilesOnWidth > tilesOnHeight ? tilesOnWidth : tilesOnHeight
-    }
-
-    var tilesOnWidth: Int {
-        return largestX - smallestX + 1
-    }
-
-    var tilesOnHeight: Int {
-        return largestY - smallestY + 1
-    }
-
-    var maxHeight = 0
-
-    func isRenderRequired(for tile: Tile) -> Bool {
-        if tile.location.x > largestX ||
-            tile.location.x < smallestX ||
-            tile.location.y > largestY ||
-            tile.location.y > smallestY {
-            return true
-        }
-
-        return false
+    init(viewLength: CGFloat) {
+        self.viewLength = viewLength
     }
 
     func updateInfo(with tile: Tile) {
@@ -59,13 +45,35 @@ class MazeInfo {
     }
 
     func x(of location: Location) -> CGFloat {
-        print("x: \(location.x)  smallestX: \(smallestX)  tileSize:\(tileSize)")
-        return CGFloat(location.x - smallestX) * tileSize
+        return CGFloat(location.x - smallestX) * tileSize + startingX
     }
 
     func y(of location: Location) -> CGFloat {
-        print("y: \(location.y)  smallestY: \(smallestY)  tileSize:\(tileSize)")
-        return CGFloat(location.y - smallestY) * tileSize
+        return CGFloat(location.y - smallestY) * tileSize + startingY
+    }
+}
+
+private extension MazeInfo {
+    var length: Int {
+        return tilesOnWidth > tilesOnHeight ? tilesOnWidth : tilesOnHeight
+    }
+    
+    var tilesOnWidth: Int {
+        return largestX - smallestX + 1
+    }
+    
+    var tilesOnHeight: Int {
+        return largestY - smallestY + 1
+    }
+    
+    var startingX: CGFloat {
+        let width = CGFloat(tilesOnWidth) * tileSize
+        return (viewLength - width) / 2
+    }
+    
+    var startingY: CGFloat {
+        let height = CGFloat(tilesOnHeight) * tileSize
+        return (viewLength - height) / 2
     }
 }
 
@@ -74,7 +82,8 @@ protocol MazeProcessorDelegate: class {
 }
 
 class MazeProcessor {
-    var info = MazeInfo()
+    var viewLength: CGFloat
+    var info: MazeInfo
     var array = ThreadSafeArray<Tile>()
 
     private var stack = ThreadSafeStack<Tile>()
@@ -85,6 +94,11 @@ class MazeProcessor {
 
     weak var delegate: MazeProcessorDelegate?
 
+    init(viewLength: CGFloat) {
+        self.viewLength = viewLength
+        self.info = MazeInfo(viewLength: viewLength)
+    }
+    
     func start() {
         queue.async {
             self.manager.fetchFirstTile { result in
@@ -152,12 +166,8 @@ private extension MazeProcessor {
 
             tiles.forEach {
                 self.addToStack($0)
-                print("????? \($0.location)")
+                self.process()
             }
-            
-//            sleep(1)
-            
-            self.process()
         }
     }
 
@@ -167,7 +177,7 @@ private extension MazeProcessor {
         }
         queue.async {
             let id = self.manager.unlock(with: lock)
-            tile.room?.id = id
+            tile.id = id
             self.fetchTileById(in: tile)
         }
     }

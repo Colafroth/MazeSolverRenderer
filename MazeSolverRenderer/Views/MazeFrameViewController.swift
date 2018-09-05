@@ -12,32 +12,34 @@ class MazeFrameViewController: UIViewController {
     private var tileViews = [TileView]()
 
     private lazy var viewModel: MazeFrameViewModel = {
-        var vm = MazeFrameViewModel()
+        var vm = MazeFrameViewModel(viewLength: view.bounds.size.width)
         vm.delegate = self
         return vm
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         viewModel.start()
     }
 }
 
 private extension MazeFrameViewController {
     func render(with tile: Tile) {
-        print("Rendering... \(tile.room)")
         let tileView = TileView(tile: tile)
         view.addSubview(tileView)
         tileViews.append(tileView)
 
-        renderWhole()
+        if viewModel.shouldReRenderMaze {
+            renderWhole()
+        } else {
+            tileView.frame = viewModel.frame(for: tileView.tile.location)
+        }
     }
 
     func renderWhole() {
         tileViews.forEach {
             $0.frame = viewModel.frame(for: $0.tile.location)
-            print("frame: \($0.frame)")
         }
     }
 }
