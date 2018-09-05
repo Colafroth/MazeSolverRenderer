@@ -23,4 +23,10 @@ class ThreadSafeStack<T> {
             array.popLast()
         }
     }
+    
+    func removeAll() {
+        queue.sync(flags: .barrier) {
+            array.removeAll()
+        }
+    }
 }

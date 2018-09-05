@@ -16,15 +16,22 @@ class MazeFrameViewController: UIViewController {
         vm.delegate = self
         return vm
     }()
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    
+    func start() {
+        reset()
+        viewModel.reset()
         viewModel.start()
     }
 }
 
 private extension MazeFrameViewController {
+    func reset() {
+        tileViews.forEach {
+            $0.removeFromSuperview()
+        }
+        tileViews.removeAll()
+    }
+    
     func render(with tile: Tile) {
         let tileView = TileView(tile: tile)
         view.addSubview(tileView)

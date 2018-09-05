@@ -16,7 +16,6 @@ class MazeInfo {
     private var largestX = 0
     private var smallestY = 0
     private var largestY = 0
-    private var maxHeight = 0
 
     var tileSize: CGFloat {
         return viewLength / CGFloat(length)
@@ -28,6 +27,13 @@ class MazeInfo {
 
     init(viewLength: CGFloat) {
         self.viewLength = viewLength
+    }
+    
+    func reset() {
+        smallestX = 0
+        largestX = 0
+        smallestY = 0
+        largestY = 0
     }
 
     func updateInfo(with tile: Tile) {
@@ -112,6 +118,12 @@ class MazeProcessor {
                 }
             }
         }
+    }
+    
+    func reset() {
+        info.reset()
+        array.removeAll()
+        stack.removeAll()
     }
 
     func frame(for location: Location) -> CGRect {

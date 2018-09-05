@@ -23,4 +23,10 @@ class ThreadSafeArray<T> {
             try! array.contains(where: predicate)
         }
     }
+    
+    func removeAll() {
+        queue.sync(flags: .barrier) {
+            array.removeAll()
+        }
+    }
 }

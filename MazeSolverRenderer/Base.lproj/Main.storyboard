@@ -53,6 +53,9 @@
                                                             <constraint firstAttribute="height" constant="60" id="Zbm-QX-bFj"/>
                                                         </constraints>
                                                         <state key="normal" title="Generate" backgroundImage="Button"/>
+                                                        <connections>
+                                                            <action selector="didTapGenerateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dHe-4W-Twn"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PXI-1p-0Ma">
                                                         <rect key="frame" x="0.0" y="80" width="335" height="60"/>
@@ -60,10 +63,16 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="048-0j-nBM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="60"/>
                                                                 <state key="normal" title="Button" backgroundImage="Button"/>
+                                                                <connections>
+                                                                    <action selector="didTapLeftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2uf-ME-nfe"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7I-A0-D4M">
                                                                 <rect key="frame" x="177.66666666666663" y="0.0" width="157.33333333333337" height="60"/>
                                                                 <state key="normal" title="Button" backgroundImage="Button"/>
+                                                                <connections>
+                                                                    <action selector="didTapRightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JSe-B0-PCI"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>

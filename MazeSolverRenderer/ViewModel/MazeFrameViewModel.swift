@@ -45,6 +45,10 @@ class MazeFrameViewModel {
     func start() {
         processor.start()
     }
+    
+    func reset() {
+        processor.reset()
+    }
 
     func frame(for location: Location) -> CGRect {
         return processor.frame(for: location)

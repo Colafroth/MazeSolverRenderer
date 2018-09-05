@@ -19,6 +19,18 @@ class MazeViewController: UIViewController {
         super.viewDidLoad()
         basicSetup()
     }
+    
+    @IBAction func didTapGenerateButton(_ sender: Any) {
+        mazeFrameViewController.start()
+    }
+    
+    @IBAction func didTapLeftButton(_ sender: Any) {
+        
+    }
+    
+    @IBAction func didTapRightButton(_ sender: Any) {
+        
+    }
 }
 
 private extension MazeViewController {
