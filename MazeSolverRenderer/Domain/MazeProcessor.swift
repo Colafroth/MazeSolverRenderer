@@ -93,10 +93,10 @@ class MazeProcessor {
     var array = ThreadSafeArray<Tile>()
 
     private var stack = ThreadSafeStack<Tile>()
-
     private var queue = DispatchQueue(label: "com.mazeprocessor.tony", attributes: .concurrent)
     private let manager = MazeNetworkManager()
     private var imageDownloader = ImageDownloader()
+    private var group = DispatchGroup()
 
     weak var delegate: MazeProcessorDelegate?
 
@@ -105,13 +105,24 @@ class MazeProcessor {
         self.info = MazeInfo(viewLength: viewLength)
     }
     
+    var counter = 0
+    
     func start() {
+        group = DispatchGroup()
+        group.notify(queue: .main) {
+            print("FINALLY")
+        }
+        queue.async(flags: .barrier) {
+            self.counter = self.counter + 1
+            print("++ counter \(self.counter)")
+            self.group.enter()
+        }
+        
         queue.async {
             self.manager.fetchFirstTile { result in
                 switch result {
                 case .success(let room):
                     let tile = Tile(room: room, location: Location(x: 0, y: 0))
-                    self.addToArray(tile)
                     self.fetchTileById(in: tile)
                 case .failure:
                     self.start()
@@ -156,8 +167,16 @@ private extension MazeProcessor {
             switch result {
             case .success(let room):
                 tile.room = room
-                self.addToArray(tile)
-                self.processRoom(in: tile)
+                
+                if self.addToArray(tile) {
+                    self.processRoom(in: tile)
+                } else {
+                    self.queue.async(flags: .barrier) {
+                        self.counter = self.counter - 1
+                        print("-- counter \(self.counter)")
+                        self.group.leave()
+                    }
+                }
             case .failure:
                 self.fetchTileById(in: tile)
             }
@@ -174,11 +193,24 @@ private extension MazeProcessor {
             let tiles = [Tile.newTile(from: rooms.north, direction: .north, location: tile.location),
                          Tile.newTile(from: rooms.west, direction: .west, location: tile.location),
                          Tile.newTile(from: rooms.south, direction: .south, location: tile.location),
-                         Tile.newTile(from: rooms.east, direction: .east, location: tile.location)].compactMap{ $0 }
+                         Tile.newTile(from: rooms.east, direction: .east, location: tile.location)]
+                        .compactMap{ $0 }
 
             tiles.forEach {
-                self.addToStack($0)
-                self.process()
+                if self.addToStack($0) {
+                    self.queue.async(flags: .barrier) {
+                        self.counter = self.counter + 1
+                        print("++ counter \(self.counter)")
+                        self.group.enter()
+                    }
+                    self.process()
+                }
+            }
+            
+            self.queue.async(flags: .barrier) {
+                self.counter = self.counter - 1
+                print("-- counter \(self.counter)")
+                self.group.leave()
             }
         }
     }
@@ -213,19 +245,21 @@ private extension MazeProcessor {
         }
     }
 
-    func addToArray(_ tile: Tile) {
+    func addToArray(_ tile: Tile) -> Bool {
         if array.contains(where: { $0.id == tile.id }) {
-            return
+            return false
         }
 
         array.append(tile)
+        return true
     }
     
-    func addToStack(_ tile: Tile) {
+    func addToStack(_ tile: Tile) -> Bool {
         if array.contains(where: { $0.id == tile.id }) {
-            return
+            return false
         }
         
         stack.push(tile)
+        return true
     }
 }

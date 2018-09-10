@@ -9,7 +9,7 @@
 import Foundation
 
 class ThreadSafeStack<T> {
-    private var array = [T]()
+     var array = [T]()
     private var queue = DispatchQueue(label: "com.stack.tony", attributes: .concurrent)
 
     func push(_ object: T) {
