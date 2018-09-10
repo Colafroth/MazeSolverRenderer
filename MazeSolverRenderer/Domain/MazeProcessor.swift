@@ -105,29 +105,27 @@ class MazeProcessor {
         self.info = MazeInfo(viewLength: viewLength)
     }
     
-    var counter = 0
-    
     func start() {
         group = DispatchGroup()
-        group.notify(queue: .main) {
-            print("FINALLY")
-        }
-        queue.async(flags: .barrier) {
-            self.counter = self.counter + 1
-            print("++ counter \(self.counter)")
-            self.group.enter()
-        }
-        
+
+        group.enter()
+
         queue.async {
             self.manager.fetchFirstTile { result in
                 switch result {
                 case .success(let room):
                     let tile = Tile(room: room, location: Location(x: 0, y: 0))
                     self.fetchTileById(in: tile)
+                    self.group.leave()
                 case .failure:
                     self.start()
+                    self.group.leave()
                 }
             }
+        }
+
+        group.notify(queue: .main) {
+            print("FINALLY")
         }
     }
     
@@ -147,22 +145,27 @@ class MazeProcessor {
 
 private extension MazeProcessor {
     func process() {
+        group.enter()
         queue.async {
             guard let tile = self.stack.pop() else {
                 print("Empty Stack")
+                self.group.leave()
                 return
             }
 
             if tile.lock != nil {
                 self.processLock(in: tile)
+                self.group.leave()
                 return
             }
 
             self.fetchTileById(in: tile)
+            self.group.leave()
         }
     }
 
     func fetchTileById(in tile: Tile) {
+        group.enter()
         manager.fetchTile(with: tile.id) { result in
             switch result {
             case .success(let room):
@@ -170,23 +173,21 @@ private extension MazeProcessor {
                 
                 if self.addToArray(tile) {
                     self.processRoom(in: tile)
-                } else {
-                    self.queue.async(flags: .barrier) {
-                        self.counter = self.counter - 1
-                        print("-- counter \(self.counter)")
-                        self.group.leave()
-                    }
                 }
+                self.group.leave()
             case .failure:
                 self.fetchTileById(in: tile)
+                self.group.leave()
             }
         }
     }
 
     func processRoom(in tile: Tile) {
+        group.enter()
         downloadImage(for: tile) {
             guard let rooms = tile.room?.rooms else {
                 print("Empty rooms error")
+                self.group.leave()
                 return
             }
 
@@ -198,20 +199,10 @@ private extension MazeProcessor {
 
             tiles.forEach {
                 if self.addToStack($0) {
-                    self.queue.async(flags: .barrier) {
-                        self.counter = self.counter + 1
-                        print("++ counter \(self.counter)")
-                        self.group.enter()
-                    }
                     self.process()
                 }
             }
-            
-            self.queue.async(flags: .barrier) {
-                self.counter = self.counter - 1
-                print("-- counter \(self.counter)")
-                self.group.leave()
-            }
+            self.group.leave()
         }
     }
 
@@ -219,10 +210,14 @@ private extension MazeProcessor {
         guard let lock = tile.lock else {
             fatalError("Error having lock")
         }
+
+        group.enter()
+
         queue.async {
             let id = self.manager.unlock(with: lock)
             tile.id = id
             self.fetchTileById(in: tile)
+            self.group.leave()
         }
     }
 }
