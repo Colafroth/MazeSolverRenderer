@@ -42,13 +42,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-Sl-0cz">
-                                        <rect key="frame" x="0.0" y="405" width="375" height="180"/>
+                                        <rect key="frame" x="0.0" y="405" width="375" height="220"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yls-cf-zSR">
-                                                <rect key="frame" x="20" y="20" width="335" height="140"/>
+                                                <rect key="frame" x="20" y="20" width="335" height="180"/>
                                                 <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSk-oS-hk6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="iwr-ox-Zis"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eO-89-f7T">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
+                                                        <rect key="frame" x="0.0" y="40" width="335" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="Zbm-QX-bFj"/>
                                                         </constraints>
@@ -58,7 +67,7 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PXI-1p-0Ma">
-                                                        <rect key="frame" x="0.0" y="80" width="335" height="60"/>
+                                                        <rect key="frame" x="0.0" y="120" width="335" height="60"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="048-0j-nBM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="60"/>
@@ -94,7 +103,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asD-rc-I0t">
-                                        <rect key="frame" x="0.0" y="615" width="375" height="119"/>
+                                        <rect key="frame" x="0.0" y="655" width="375" height="79"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -115,6 +124,7 @@
                     </view>
                     <connections>
                         <outlet property="mazeFrameContainerView" destination="Yds-vE-nR0" id="EnF-qb-8GD"/>
+                        <outlet property="timerLabel" destination="NSk-oS-hk6" id="FsZ-L1-raW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

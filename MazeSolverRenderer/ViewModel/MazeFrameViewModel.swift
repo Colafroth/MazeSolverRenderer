@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol MazeFrameChildViewModelDelegate: class {
+    func mazeDidComplete()
+}
+
 protocol MazeFrameViewModelDelegate: class {
     func didSetTile(_ tile: Tile)
 }
@@ -17,6 +21,7 @@ class MazeFrameViewModel {
     var viewLength: CGFloat
     
     weak var delegate: MazeFrameViewModelDelegate?
+    weak var childDelegate: MazeFrameChildViewModelDelegate?
     
     var tiles: ThreadSafeArray<Tile> {
         return processor.array
@@ -58,5 +63,9 @@ class MazeFrameViewModel {
 extension MazeFrameViewModel: MazeProcessorDelegate {
     func didSetTile(_ tile: Tile) {
         delegate?.didSetTile(tile)
+    }
+
+    func mazeDidComplete() {
+        childDelegate?.mazeDidComplete()
     }
 }

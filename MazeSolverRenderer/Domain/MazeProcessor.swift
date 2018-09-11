@@ -85,6 +85,7 @@ private extension MazeInfo {
 
 protocol MazeProcessorDelegate: class {
     func didSetTile(_ tile: Tile)
+    func mazeDidComplete()
 }
 
 class MazeProcessor {
@@ -125,7 +126,7 @@ class MazeProcessor {
         }
 
         group.notify(queue: .main) {
-            print("FINALLY")
+            self.delegate?.mazeDidComplete()
         }
     }
     

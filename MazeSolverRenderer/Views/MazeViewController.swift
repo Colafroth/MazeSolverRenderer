@@ -10,9 +10,14 @@ import UIKit
 
 class MazeViewController: UIViewController {
     @IBOutlet private weak var mazeFrameContainerView: UIView!
+    @IBOutlet private weak var timerLabel: UILabel!
 
-    private lazy var mazeFrameViewController: MazeFrameViewController = {
-        return MazeFrameViewController()
+    private var mazeFrameViewController = MazeFrameViewController()
+
+    private lazy var viewModel: MazeViewModel = {
+        var vm = MazeViewModel()
+        vm.delegate = self
+        return vm
     }()
 
     override func viewDidLoad() {
@@ -22,6 +27,7 @@ class MazeViewController: UIViewController {
     
     @IBAction func didTapGenerateButton(_ sender: Any) {
         mazeFrameViewController.start()
+        viewModel.start()
     }
     
     @IBAction func didTapLeftButton(_ sender: Any) {
@@ -39,6 +45,18 @@ private extension MazeViewController {
         mazeFrameContainerView.addSubview(mazeFrameViewController.view)
         mazeFrameViewController.didMove(toParentViewController: self)
         mazeFrameViewController.view.frame = CGRect(x: 10, y: 10, width: mazeFrameContainerView.bounds.size.width - 20, height: mazeFrameContainerView.bounds.size.height - 20)
+
+        let frameViewModel = MazeFrameViewModel(viewLength: mazeFrameViewController.view.bounds.size.width)
+        frameViewModel.delegate = mazeFrameViewController
+        frameViewModel.childDelegate = viewModel
+        viewModel.childViewModel = frameViewModel
+        mazeFrameViewController.viewModel = frameViewModel
+    }
+}
+
+extension MazeViewController: MazeViewModelDelegate {
+    func timerDidTick(with timeText: String) {
+        timerLabel.text = timeText
     }
 }
 

@@ -11,11 +11,7 @@ import UIKit
 class MazeFrameViewController: UIViewController {
     private var tileViews = [TileView]()
 
-    private lazy var viewModel: MazeFrameViewModel = {
-        var vm = MazeFrameViewModel(viewLength: view.bounds.size.width)
-        vm.delegate = self
-        return vm
-    }()
+    var viewModel: MazeFrameViewModel!
     
     func start() {
         reset()
