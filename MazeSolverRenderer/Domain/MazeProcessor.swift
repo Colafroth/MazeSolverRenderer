@@ -6,56 +6,54 @@
 //  Copyright © 2018 Anteng Lin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class MazeInfo {
     var viewLength: CGFloat
-    
-    private var smallestX = 0
-    private var largestX = 0
-    private var smallestY = 0
-    private var largestY = 0
+    var maze: Maze
 
     var tileSize: CGFloat {
-        return viewLength / CGFloat(length)
+        let size = viewLength / CGFloat(length)
+        maze.tileSize = size
+        return size
     }
     
     var dense: Int {
         return tilesOnWidth * tilesOnHeight
     }
 
-    init(viewLength: CGFloat) {
+    init(viewLength: CGFloat, maze: Maze) {
         self.viewLength = viewLength
+        self.maze = maze
     }
     
     func reset() {
-        smallestX = 0
-        largestX = 0
-        smallestY = 0
-        largestY = 0
+        maze.smallestX = 0
+        maze.largestX = 0
+        maze.smallestY = 0
+        maze.largestY = 0
     }
 
     func updateInfo(with tile: Tile) {
-        if tile.location.x > largestX {
-            largestX = tile.location.x
-        } else if tile.location.x < smallestX {
-            smallestX = tile.location.x
+        if tile.location.x > maze.largestX {
+            maze.largestX = tile.location.x
+        } else if tile.location.x < maze.smallestX {
+            maze.smallestX = tile.location.x
         }
 
-        if tile.location.y > largestY {
-            largestY = tile.location.y
-        } else if tile.location.y < smallestY {
-            smallestY = tile.location.y
+        if tile.location.y > maze.largestY {
+            maze.largestY = tile.location.y
+        } else if tile.location.y < maze.smallestY {
+            maze.smallestY = tile.location.y
         }
     }
 
     func x(of location: Location) -> CGFloat {
-        return CGFloat(location.x - smallestX) * tileSize + startingX
+        return CGFloat(location.x - maze.smallestX) * tileSize + startingX
     }
 
     func y(of location: Location) -> CGFloat {
-        return CGFloat(location.y - smallestY) * tileSize + startingY
+        return CGFloat(location.y - maze.smallestY) * tileSize + startingY
     }
 }
 
@@ -65,21 +63,25 @@ private extension MazeInfo {
     }
     
     var tilesOnWidth: Int {
-        return largestX - smallestX + 1
+        return maze.largestX - maze.smallestX + 1
     }
     
     var tilesOnHeight: Int {
-        return largestY - smallestY + 1
+        return maze.largestY - maze.smallestY + 1
     }
     
     var startingX: CGFloat {
         let width = CGFloat(tilesOnWidth) * tileSize
-        return (viewLength - width) / 2
+        let x = (viewLength - width) / 2
+        maze.startingX = x
+        return x
     }
     
     var startingY: CGFloat {
         let height = CGFloat(tilesOnHeight) * tileSize
-        return (viewLength - height) / 2
+        let y = (viewLength - height) / 2
+        maze.startingY = y
+        return y
     }
 }
 
@@ -103,27 +105,13 @@ class MazeProcessor {
 
     init(viewLength: CGFloat) {
         self.viewLength = viewLength
-        self.info = MazeInfo(viewLength: viewLength)
+        self.info = MazeInfo(viewLength: viewLength, maze: Maze())
     }
     
     func start() {
         group = DispatchGroup()
 
-        group.enter()
-
-        queue.async {
-            self.manager.fetchFirstTile { result in
-                switch result {
-                case .success(let room):
-                    let tile = Tile(room: room, location: Location(x: 0, y: 0))
-                    self.fetchTileById(in: tile)
-                    self.group.leave()
-                case .failure:
-                    self.start()
-                    self.group.leave()
-                }
-            }
-        }
+        fetchFirstTile()
 
         group.notify(queue: .main) {
             self.delegate?.mazeDidComplete()
@@ -145,6 +133,23 @@ class MazeProcessor {
 }
 
 private extension MazeProcessor {
+    func fetchFirstTile() {
+        group.enter()
+        queue.async {
+            self.manager.fetchFirstTile { result in
+                switch result {
+                case .success(let room):
+                    let tile = Tile(room: room, location: Location(x: 0, y: 0))
+                    self.fetchTileById(in: tile)
+                    self.group.leave()
+                case .failure:
+                    self.start()
+                    self.group.leave()
+                }
+            }
+        }
+    }
+
     func process() {
         group.enter()
         queue.async {
